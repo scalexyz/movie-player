@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>AnimeStream | Watch One Piece Hindi</title>
+  <!-- Google Fonts & modern feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #0a0c10 0%, #101318 100%);
+      font-family: 'Inter', sans-serif;
+      color: #edeef2;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* main card container */
+    .glass-card {
+      max-width: 1200px;
+      width: 100%;
+      background: rgba(18, 22, 30, 0.7);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* hero section with anime vibe */
+    .hero {
+      padding: 2.5rem 2rem 1.5rem 2rem;
+      background: radial-gradient(circle at 10% 30%, rgba(255, 80, 40, 0.12), transparent 70%);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 90, 50, 0.2);
+      backdrop-filter: blur(4px);
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #ffaa88;
+      border: 0.5px solid rgba(255, 110, 64, 0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    .badge i {
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFB88C 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: #b9c2d4;
+      max-width: 85%;
+      margin-top: 0.5rem;
+    }
+
+    .highlight {
+      color: #ff9666;
+      font-weight: 500;
+    }
+
+    /* main content area */
+    .content {
+      padding: 2rem 2rem 2.5rem 2rem;
+    }
+
+    /* info panel */
+    .info-panel {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 1.8rem;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.03);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .episode-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #1e2432;
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 500;
+    }
+
+    .episode-tag i {
+      color: #ff8c5a;
+    }
+
+    .lang-badge {
+      background: #11161f;
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* button group grid */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin: 2.5rem 0 1.2rem;
+    }
+
+    /* modern button styles */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: all 0.25s ease-out;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      background: rgba(30, 36, 48, 0.9);
+      color: #eef2ff;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      letter-spacing: 0.2px;
+      box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(105deg, #e65c2e 0%, #f0985e 100%);
+      color: white;
+      border: none;
+      box-shadow: 0 8px 20px rgba(230, 92, 46, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(105deg, #f06a3a 0%, #ffa56e 100%);
+      box-shadow: 0 15px 28px -8px rgba(230, 92, 46, 0.5);
+    }
+
+    .btn-secondary {
+      background: rgba(20, 28, 40, 0.9);
+      border: 1px solid rgba(255, 140, 90, 0.4);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(40, 50, 70, 0.95);
+      border-color: #ff8c5a;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid rgba(255, 140, 90, 0.7);
+      color: #ffc7aa;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 100, 50, 0.15);
+      border-color: #ff9666;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .btn-large {
+      padding: 1rem 2.2rem;
+      font-size: 1.2rem;
+    }
+
+    .btn:hover i {
+      transform: translateX(3px);
+    }
+
+    /* extra info & footer */
+    .extra-details {
+      margin-top: 2.5rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 1.6rem;
+      padding: 1.2rem 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #8f9bb3;
+      gap: 1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 1.8rem;
+      font-size: 0.75rem;
+      color: #5f6c86;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 1.5rem;
+    }
+
+    .copy-badge {
+      display: flex;
+      gap: 1rem;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        padding: 1rem;
+      }
+      .hero {
+        padding: 1.8rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .hero-desc {
+        max-width: 100%;
+        font-size: 0.95rem;
+      }
+      .content {
+        padding: 1.5rem;
+      }
+      .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+      }
+      .button-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .info-panel {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .extra-details {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* subtle animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-4px); }
+    }
+    .btn-primary {
+      animation: float 3s infinite ease-in-out;
+    }
+    .btn-primary:hover {
+      animation: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="glass-card">
+  <div class="hero">
+    <div class="badge">
+      <i class="fas fa-crown"></i> <span>Premium Streaming</span>
+    </div>
+    <h1>One Piece <span style="color:#ffb085;">Hindi Dubbed</span></h1>
+    <p class="hero-desc">
+      Join Luffy and the Straw Hat Pirates in their epic journey to find the legendary One Piece.  
+      Experience the <span class="highlight">highest quality</span> streaming in Hindi, fully uncut and ad-free interface.
+    </p>
+  </div>
+
+  <div class="content">
+    <!-- info row -->
+    <div class="info-panel">
+      <div class="episode-tag">
+        <i class="fas fa-film"></i>
+        <span>Episode: Wano Arc • Special HD</span>
+      </div>
+      <div class="lang-badge">
+        <i class="fas fa-language"></i>
+        <span>Hindi [Org. Dub] • Multi-audio ready</span>
+      </div>
+      <div class="lang-badge">
+        <i class="fas fa-microphone-alt"></i>
+        <span>Dual Audio • ENG/JAP/HIN</span>
+      </div>
+    </div>
+
+    <!-- BUTTONS SECTION: all links lead to the provided URL -->
+    <div class="button-group">
+      <!-- Main Primary Button: Large & Eye-catching with direct link -->
+      <a href="https://123movienow.cc/spa/videoPlayPage/movies/one-piece-hindi-46WUdLz7Ks5?id=4585605580068379856&type=/movie/detail&detailSe=&detailEp=&lang=en" 
+         class="btn btn-primary btn-large" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <i class="fas fa-play-circle"></i> Watch Now — One Piece Hindi
+      </a>
+
+      <!-- Secondary button with additional style: also same link, but maybe "Stream in HD" -->
+      <a href="https://123movienow.cc/spa/videoPlayPage/movies/one-piece-hindi-46WUdLz7Ks5?id=4585605580068379856&type=/movie/detail&detailSe=&detailEp=&lang=en" 
+         class="btn btn-secondary" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <i class="fas fa-tv"></i> Full HD Stream
+      </a>
+
+      <!-- Outline style: "Latest Episode" -> still the same destination, but text variation -->
+      <a href="https://123movienow.cc/spa/videoPlayPage/movies/one-piece-hindi-46WUdLz7Ks5?id=4585605580068379856&type=/movie/detail&detailSe=&detailEp=&lang=en" 
+         class="btn btn-outline" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <i class="fas fa-forward-step"></i> Latest Episode 1089+
+      </a>
+    </div>
+
+    <!-- Second row of alternative stylish buttons (more options) -->
+    <div class="button-group" style="margin-top: 0.2rem;">
+      <a href="https://123movienow.cc/spa/videoPlayPage/movies/one-piece-hindi-46WUdLz7Ks5?id=4585605580068379856&type=/movie/detail&detailSe=&detailEp=&lang=en" 
+         class="btn" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         style="background:#1f2a3a;">
+        <i class="fas fa-download"></i> Stream Now (No Signup)
+      </a>
+      <a href="https://123movienow.cc/spa/videoPlayPage/movies/one-piece-hindi-46WUdLz7Ks5?id=4585605580068379856&type=/movie/detail&detailSe=&detailEp=&lang=en" 
+         class="btn" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         style="background:#2a1e2c; border-color:#b57295;">
+        <i class="fas fa-headphones"></i> Hindi Dubbed Server
+      </a>
+    </div>
+
+    <!-- extra helpful info + mini link preview -->
+    <div class="extra-details">
+      <div><i class="fas fa-check-circle" style="color:#5bcf7a;"></i> 4K & Full HD sources</div>
+      <div><i class="fas fa-clock"></i> Updated weekly • Simulcast</div>
+      <div class="copy-badge">
+        <i class="fas fa-shield-alt"></i> Secure & Fast Streaming
+      </div>
+    </div>
+
+    <div class="footer-note">
+      <i class="fas fa-link"></i> Direct access to the official streaming page — One Piece Hindi Dub. <br>
+      Click any button above to enjoy the adventure of the King of Pirates!
+    </div>
+  </div>
+</div>
+
+<!-- optional micro interaction: console safe -->
+</body>
+</html>
